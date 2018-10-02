@@ -5,13 +5,20 @@
     "dir" : "src",
     "subdirs" : true
   },
+   /* {
+    "dir": ,
+    "type": "dev"
+  }], */
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "suffix": ".bs.js",
+  "bs-dev-dependencies": [
+    "bs-jest",
+  ],
   "bs-dependencies": [
-      // add your bs-dependencies here 
+      // add your bs-dependencies here
   ],
   "warnings": {
     "error" : "+101"
