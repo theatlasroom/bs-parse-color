@@ -13,27 +13,7 @@ describe("Smoke", (function () {
 describe("parse", (function () {
         return Jest.test("Hex #ffa500", (function () {
                       var t = ParseColor.parse("#ffa500");
-                      var res_000 = /* rgb : tuple */[
-                        0,
-                        0,
-                        0
-                      ];
-                      var res_001 = /* hsl : tuple */[
-                        0,
-                        0,
-                        0
-                      ];
-                      var res_002 = /* hsv : tuple */[
-                        0,
-                        0,
-                        0
-                      ];
-                      var res = /* record */[
-                        res_000,
-                        res_001,
-                        res_002
-                      ];
-                      return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
+                      return Jest.Expect[/* toEqual */12](ParseColor.defaultColor, Jest.Expect[/* expect */0](t));
                     }));
       }));
 

@@ -2,44 +2,53 @@
 'use strict';
 
 
-function parse() {
-  return /* record */[
-          /* rgb : tuple */[
-            0,
-            0,
-            0
-          ],
-          /* hsl : tuple */[
-            0,
-            0,
-            0
-          ],
-          /* hsv : tuple */[
-            0,
-            0,
-            0
-          ]
-        ];
-}
-
-var emptyColor = /* record */[
-  /* rgb : tuple */[
-    0,
-    0,
-    0
-  ],
-  /* hsl : tuple */[
-    0,
-    0,
-    0
-  ],
-  /* hsv : tuple */[
-    0,
-    0,
-    0
-  ]
+var unitColor = /* tuple */[
+  0,
+  0,
+  0
 ];
 
-exports.emptyColor = emptyColor;
+var unitAlphaColor = /* tuple */[
+  0,
+  0,
+  0,
+  0
+];
+
+var defaultColor_003 = /* cmyk : tuple */[
+  0,
+  0,
+  0,
+  0
+];
+
+var defaultColor_009 = /* cmyka : tuple */[
+  0,
+  0,
+  0,
+  0,
+  0
+];
+
+var defaultColor = /* record */[
+  /* rgb */unitColor,
+  /* hsl */unitColor,
+  /* hsv */unitColor,
+  defaultColor_003,
+  /* keyword */"",
+  /* hex */"",
+  /* rgba */unitAlphaColor,
+  /* hsla */unitAlphaColor,
+  /* hsva */unitAlphaColor,
+  defaultColor_009
+];
+
+function parse() {
+  return defaultColor;
+}
+
+exports.unitColor = unitColor;
+exports.unitAlphaColor = unitAlphaColor;
+exports.defaultColor = defaultColor;
 exports.parse = parse;
 /* No side effect */

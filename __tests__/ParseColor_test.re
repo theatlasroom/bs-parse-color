@@ -91,10 +91,7 @@ describe("Smoke", () =>
 describe("parse", () =>
   test("Hex #ffa500", () => {
     let t = "#ffa500" |> ParseColor.parse;
-    let rgb = (0, 0, 0);
-    let hsv = (0, 0, 0);
-    let hsl = (0, 0, 0);
-    let res = {rgb, hsv, hsl};
+    let res = ParseColor.defaultColor;
     expect(t) |> toEqual(res);
   })
 );
