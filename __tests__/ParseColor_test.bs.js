@@ -2,10 +2,38 @@
 'use strict';
 
 var Jest = require("bs-jest/src/jest.js");
+var ParseColor = require("../src/ParseColor.bs.js");
 
 describe("Smoke", (function () {
-        return Jest.test("toBe", (function () {
+        return Jest.test("1 + 2 = 3", (function () {
                       return Jest.Expect[/* toBe */2](3, Jest.Expect[/* expect */0](3));
+                    }));
+      }));
+
+describe("parse", (function () {
+        return Jest.test("Hex #ffa500", (function () {
+                      var t = ParseColor.parse("#ffa500");
+                      var res_000 = /* rgb : tuple */[
+                        0,
+                        0,
+                        0
+                      ];
+                      var res_001 = /* hsl : tuple */[
+                        0,
+                        0,
+                        0
+                      ];
+                      var res_002 = /* hsv : tuple */[
+                        0,
+                        0,
+                        0
+                      ];
+                      var res = /* record */[
+                        res_000,
+                        res_001,
+                        res_002
+                      ];
+                      return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
                     }));
       }));
 
