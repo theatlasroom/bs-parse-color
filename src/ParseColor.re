@@ -6,9 +6,9 @@ type hsv = (int, int, int);
 
 type cmyk = (int, int, int, int);
 
-type keyword = string;
+type keyword = option(string);
 
-type hex = string;
+type hex = option(string);
 
 type rgba = (int, int, int, float);
 
@@ -40,8 +40,8 @@ let defaultColor: color = {
   hsl: unitColor,
   hsv: unitColor,
   cmyk: (0, 0, 0, 0),
-  keyword: "",
-  hex: "",
+  keyword: None,
+  hex: None,
   rgba: unitAlphaColor,
   hsla: unitAlphaColor,
   hsva: unitAlphaColor,
