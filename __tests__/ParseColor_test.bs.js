@@ -4,332 +4,336 @@
 var Jest = require("bs-jest/src/jest.js");
 var ParseColor = require("../src/ParseColor.bs.js");
 
-describe("Smoke", (function () {
+describe("Free smoke free smokkkkeee", (function () {
         return Jest.test("1 + 2 = 3", (function () {
                       return Jest.Expect[/* toBe */2](3, Jest.Expect[/* expect */0](3));
                     }));
       }));
 
 describe("parse", (function () {
-        Jest.Only[/* test */0]("Hex #ffa500", (function () {
+        Jest.test("Hex #ffa500", (function () {
                 var t = ParseColor.parse("#ffa500");
-                var res = /* record */[
-                  /* rgb : tuple */[
+                var res = {
+                  rgb: /* tuple */[
                     255,
                     165,
                     0
                   ],
-                  /* hsl : tuple */[
+                  hsl: /* tuple */[
                     39,
                     100,
                     50
                   ],
-                  /* hsv : tuple */[
+                  hsv: /* tuple */[
                     39,
                     100,
                     100
                   ],
-                  /* cmyk : tuple */[
+                  cmyk: /* tuple */[
                     0,
                     35,
                     100,
                     0
                   ],
-                  /* keyword */"orange",
-                  /* hex */"#ffa500",
-                  /* rgba : tuple */[
+                  keyword: "orange",
+                  hex: "#ffa500",
+                  rgba: /* tuple */[
                     255,
                     165,
                     0,
                     1.0
                   ],
-                  /* hsla : tuple */[
+                  hsla: /* tuple */[
                     39,
                     100,
                     50,
                     1.0
                   ],
-                  /* hsva : tuple */[
+                  hsva: /* tuple */[
                     39,
                     100,
                     100,
                     1.0
                   ],
-                  /* cmyka : tuple */[
+                  cmyka: /* tuple */[
                     0,
                     35,
                     100,
                     0,
                     1.0
                   ]
-                ];
-                console.log(res);
+                };
                 return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         Jest.test("Hex #333", (function () {
                 var t = ParseColor.parse("#333");
-                return Jest.Expect[/* toEqual */12](/* record */[
-                            /* rgb : tuple */[
-                              51,
-                              51,
-                              51
-                            ],
-                            /* hsl : tuple */[
-                              0,
-                              0,
-                              20
-                            ],
-                            /* hsv : tuple */[
-                              0,
-                              0,
-                              20
-                            ],
-                            /* cmyk : tuple */[
-                              0,
-                              0,
-                              0,
-                              80
-                            ],
-                            /* keyword */undefined,
-                            /* hex */"#333333",
-                            /* rgba : tuple */[
-                              51,
-                              51,
-                              51,
-                              1.0
-                            ],
-                            /* hsla : tuple */[
-                              0,
-                              0,
-                              20,
-                              1.0
-                            ],
-                            /* hsva : tuple */[
-                              0,
-                              0,
-                              20,
-                              1.0
-                            ],
-                            /* cmyka : tuple */[
-                              0,
-                              0,
-                              0,
-                              80,
-                              1.0
-                            ]
-                          ], Jest.Expect[/* expect */0](t));
+                var res = {
+                  rgb: /* tuple */[
+                    51,
+                    51,
+                    51
+                  ],
+                  hsl: /* tuple */[
+                    0,
+                    0,
+                    20
+                  ],
+                  hsv: /* tuple */[
+                    0,
+                    0,
+                    20
+                  ],
+                  cmyk: /* tuple */[
+                    0,
+                    0,
+                    0,
+                    80
+                  ],
+                  keyword: undefined,
+                  hex: "#333333",
+                  rgba: /* tuple */[
+                    51,
+                    51,
+                    51,
+                    1.0
+                  ],
+                  hsla: /* tuple */[
+                    0,
+                    0,
+                    20,
+                    1.0
+                  ],
+                  hsva: /* tuple */[
+                    0,
+                    0,
+                    20,
+                    1.0
+                  ],
+                  cmyka: /* tuple */[
+                    0,
+                    0,
+                    0,
+                    80,
+                    1.0
+                  ]
+                };
+                return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         Jest.test("Hex #f98", (function () {
                 var t = ParseColor.parse("#f98");
-                return Jest.Expect[/* toEqual */12](/* record */[
-                            /* rgb : tuple */[
-                              255,
-                              153,
-                              136
-                            ],
-                            /* hsl : tuple */[
-                              9,
-                              100,
-                              77
-                            ],
-                            /* hsv : tuple */[
-                              9,
-                              47,
-                              100
-                            ],
-                            /* cmyk : tuple */[
-                              0,
-                              40,
-                              47,
-                              0
-                            ],
-                            /* keyword */undefined,
-                            /* hex */"#ff9988",
-                            /* rgba : tuple */[
-                              255,
-                              153,
-                              136,
-                              1.0
-                            ],
-                            /* hsla : tuple */[
-                              9,
-                              100,
-                              77,
-                              1.0
-                            ],
-                            /* hsva : tuple */[
-                              9,
-                              47,
-                              100,
-                              1.0
-                            ],
-                            /* cmyka : tuple */[
-                              0,
-                              40,
-                              47,
-                              0,
-                              1.0
-                            ]
-                          ], Jest.Expect[/* expect */0](t));
+                var res = {
+                  rgb: /* tuple */[
+                    255,
+                    153,
+                    136
+                  ],
+                  hsl: /* tuple */[
+                    9,
+                    100,
+                    77
+                  ],
+                  hsv: /* tuple */[
+                    9,
+                    47,
+                    100
+                  ],
+                  cmyk: /* tuple */[
+                    0,
+                    40,
+                    47,
+                    0
+                  ],
+                  keyword: undefined,
+                  hex: "#ff9988",
+                  rgba: /* tuple */[
+                    255,
+                    153,
+                    136,
+                    1.0
+                  ],
+                  hsla: /* tuple */[
+                    9,
+                    100,
+                    77,
+                    1.0
+                  ],
+                  hsva: /* tuple */[
+                    9,
+                    47,
+                    100,
+                    1.0
+                  ],
+                  cmyka: /* tuple */[
+                    0,
+                    40,
+                    47,
+                    0,
+                    1.0
+                  ]
+                };
+                return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         Jest.test("String 'lime'", (function () {
                 var t = ParseColor.parse("lime");
-                return Jest.Expect[/* toEqual */12](/* record */[
-                            /* rgb : tuple */[
-                              0,
-                              255,
-                              0
-                            ],
-                            /* hsl : tuple */[
-                              120,
-                              100,
-                              50
-                            ],
-                            /* hsv : tuple */[
-                              120,
-                              100,
-                              100
-                            ],
-                            /* cmyk : tuple */[
-                              100,
-                              0,
-                              100,
-                              0
-                            ],
-                            /* keyword */"lime",
-                            /* hex */"#00ff00",
-                            /* rgba : tuple */[
-                              0,
-                              255,
-                              0,
-                              1
-                            ],
-                            /* hsla : tuple */[
-                              120,
-                              100,
-                              50,
-                              1
-                            ],
-                            /* hsva : tuple */[
-                              120,
-                              100,
-                              100,
-                              1
-                            ],
-                            /* cmyka : tuple */[
-                              100,
-                              0,
-                              100,
-                              0,
-                              1
-                            ]
-                          ], Jest.Expect[/* expect */0](t));
+                var res = {
+                  rgb: /* tuple */[
+                    0,
+                    255,
+                    0
+                  ],
+                  hsl: /* tuple */[
+                    120,
+                    100,
+                    50
+                  ],
+                  hsv: /* tuple */[
+                    120,
+                    100,
+                    100
+                  ],
+                  cmyk: /* tuple */[
+                    100,
+                    0,
+                    100,
+                    0
+                  ],
+                  keyword: "lime",
+                  hex: "#00ff00",
+                  rgba: /* tuple */[
+                    0,
+                    255,
+                    0,
+                    1
+                  ],
+                  hsla: /* tuple */[
+                    120,
+                    100,
+                    50,
+                    1
+                  ],
+                  hsva: /* tuple */[
+                    120,
+                    100,
+                    100,
+                    1
+                  ],
+                  cmyka: /* tuple */[
+                    100,
+                    0,
+                    100,
+                    0,
+                    1
+                  ]
+                };
+                return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         Jest.test("String hsl(210,50,50)", (function () {
                 var t = ParseColor.parse("hsl(210,50,50)");
-                return Jest.Expect[/* toEqual */12](/* record */[
-                            /* rgb : tuple */[
-                              64,
-                              127,
-                              191
-                            ],
-                            /* hsl : tuple */[
-                              210,
-                              50,
-                              50
-                            ],
-                            /* hsv : tuple */[
-                              210,
-                              67,
-                              75
-                            ],
-                            /* cmyk : tuple */[
-                              67,
-                              33,
-                              0,
-                              25
-                            ],
-                            /* keyword */undefined,
-                            /* hex */"#407fbf",
-                            /* rgba : tuple */[
-                              64,
-                              127,
-                              191,
-                              1
-                            ],
-                            /* hsla : tuple */[
-                              210,
-                              50,
-                              50,
-                              1
-                            ],
-                            /* hsva : tuple */[
-                              210,
-                              67,
-                              75,
-                              1
-                            ],
-                            /* cmyka : tuple */[
-                              67,
-                              33,
-                              0,
-                              25,
-                              1
-                            ]
-                          ], Jest.Expect[/* expect */0](t));
+                var res = {
+                  rgb: /* tuple */[
+                    64,
+                    127,
+                    191
+                  ],
+                  hsl: /* tuple */[
+                    210,
+                    50,
+                    50
+                  ],
+                  hsv: /* tuple */[
+                    210,
+                    67,
+                    75
+                  ],
+                  cmyk: /* tuple */[
+                    67,
+                    33,
+                    0,
+                    25
+                  ],
+                  keyword: undefined,
+                  hex: "#407fbf",
+                  rgba: /* tuple */[
+                    64,
+                    127,
+                    191,
+                    1
+                  ],
+                  hsla: /* tuple */[
+                    210,
+                    50,
+                    50,
+                    1
+                  ],
+                  hsva: /* tuple */[
+                    210,
+                    67,
+                    75,
+                    1
+                  ],
+                  cmyka: /* tuple */[
+                    67,
+                    33,
+                    0,
+                    25,
+                    1
+                  ]
+                };
+                return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         return Jest.test("String rgba(153,50,204,60%)", (function () {
                       var t = ParseColor.parse("rgba(153,50,204,60%)");
-                      return Jest.Expect[/* toEqual */12](/* record */[
-                                  /* rgb : tuple */[
-                                    153,
-                                    50,
-                                    204
-                                  ],
-                                  /* hsl : tuple */[
-                                    280,
-                                    61,
-                                    50
-                                  ],
-                                  /* hsv : tuple */[
-                                    280,
-                                    75,
-                                    80
-                                  ],
-                                  /* cmyk : tuple */[
-                                    25,
-                                    75,
-                                    0,
-                                    20
-                                  ],
-                                  /* keyword */"darkorchid",
-                                  /* hex */"#9932cc",
-                                  /* rgba : tuple */[
-                                    153,
-                                    50,
-                                    204,
-                                    0.6
-                                  ],
-                                  /* hsla : tuple */[
-                                    280,
-                                    61,
-                                    50,
-                                    0.6
-                                  ],
-                                  /* hsva : tuple */[
-                                    280,
-                                    75,
-                                    80,
-                                    0.6
-                                  ],
-                                  /* cmyka : tuple */[
-                                    25,
-                                    75,
-                                    0,
-                                    20,
-                                    0.6
-                                  ]
-                                ], Jest.Expect[/* expect */0](t));
+                      var res = {
+                        rgb: /* tuple */[
+                          153,
+                          50,
+                          204
+                        ],
+                        hsl: /* tuple */[
+                          280,
+                          61,
+                          50
+                        ],
+                        hsv: /* tuple */[
+                          280,
+                          75,
+                          80
+                        ],
+                        cmyk: /* tuple */[
+                          25,
+                          75,
+                          0,
+                          20
+                        ],
+                        keyword: "darkorchid",
+                        hex: "#9932cc",
+                        rgba: /* tuple */[
+                          153,
+                          50,
+                          204,
+                          0.6
+                        ],
+                        hsla: /* tuple */[
+                          280,
+                          61,
+                          50,
+                          0.6
+                        ],
+                        hsva: /* tuple */[
+                          280,
+                          75,
+                          80,
+                          0.6
+                        ],
+                        cmyka: /* tuple */[
+                          25,
+                          75,
+                          0,
+                          20,
+                          0.6
+                        ]
+                      };
+                      return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
                     }));
       }));
 

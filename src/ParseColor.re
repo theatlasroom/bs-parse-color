@@ -19,33 +19,17 @@ type hsva = (int, int, int, float);
 type cmyka = (int, int, int, int, float);
 
 type color = {
-  rgb,
-  hsl,
-  hsv,
-  cmyk,
-  keyword,
-  hex,
-  rgba,
-  hsla,
-  hsva,
-  cmyka,
-};
-
-let unitColor: (int, int, int) = (0, 0, 0);
-
-let unitAlphaColor: (int, int, int, float) = (0, 0, 0, 0.);
-
-let defaultColor: color = {
-  rgb: unitColor,
-  hsl: unitColor,
-  hsv: unitColor,
-  cmyk: (0, 0, 0, 0),
-  keyword: None,
-  hex: None,
-  rgba: unitAlphaColor,
-  hsla: unitAlphaColor,
-  hsva: unitAlphaColor,
-  cmyka: (0, 0, 0, 0, 0.),
+  .
+  "rgb": rgb,
+  "hsl": hsl,
+  "hsv": hsv,
+  "cmyk": cmyk,
+  "keyword": keyword,
+  "hex": hex,
+  "rgba": rgba,
+  "hsla": hsla,
+  "hsva": hsva,
+  "cmyka": cmyka,
 };
 
 /* require our parse-color module and bind to it as a useable variable */
@@ -54,9 +38,6 @@ let defaultColor: color = {
 type parse = string => color;
 
 let parse = v => {
-  let parsed = parseColor(v);
-  Js.log(parsed);
-  Js.log(parsed.rgb);
-  Js.log(parsed.rgba);
-  parsed;
+  let p = parseColor(v);
+  p;
 };

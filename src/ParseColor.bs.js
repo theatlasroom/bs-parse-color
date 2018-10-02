@@ -3,57 +3,9 @@
 
 var ParseColor = require("parse-color");
 
-var unitColor = /* tuple */[
-  0,
-  0,
-  0
-];
-
-var unitAlphaColor = /* tuple */[
-  0,
-  0,
-  0,
-  0
-];
-
-var defaultColor_003 = /* cmyk : tuple */[
-  0,
-  0,
-  0,
-  0
-];
-
-var defaultColor_009 = /* cmyka : tuple */[
-  0,
-  0,
-  0,
-  0,
-  0
-];
-
-var defaultColor = /* record */[
-  /* rgb */unitColor,
-  /* hsl */unitColor,
-  /* hsv */unitColor,
-  defaultColor_003,
-  /* keyword */undefined,
-  /* hex */undefined,
-  /* rgba */unitAlphaColor,
-  /* hsla */unitAlphaColor,
-  /* hsva */unitAlphaColor,
-  defaultColor_009
-];
-
 function parse(v) {
-  var parsed = ParseColor(v);
-  console.log(parsed);
-  console.log(parsed[/* rgb */0]);
-  console.log(parsed[/* rgba */6]);
-  return parsed;
+  return ParseColor(v);
 }
 
-exports.unitColor = unitColor;
-exports.unitAlphaColor = unitAlphaColor;
-exports.defaultColor = defaultColor;
 exports.parse = parse;
 /* parse-color Not a pure module */
