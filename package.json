@@ -8,6 +8,14 @@
     "test": "npm run build && jest --testURL http://localhost/",
     "test:watch": "npm run build && jest --testURL http://localhost/ --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theatlasroom/bs-parse-color.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theatlasroom/bs-parse-color/issues"
+  },
+  "homepage": "https://github.com/theatlasroom/bs-parse-color#readme",
   "keywords": [
     "BuckleScript",
     "colors",
