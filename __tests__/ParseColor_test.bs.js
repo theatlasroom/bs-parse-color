@@ -11,58 +11,60 @@ describe("Smoke", (function () {
       }));
 
 describe("parse", (function () {
-        Jest.test("Hex #ffa500", (function () {
+        Jest.Only[/* test */0]("Hex #ffa500", (function () {
                 var t = ParseColor.parse("#ffa500");
-                return Jest.Expect[/* toEqual */12](/* record */[
-                            /* rgb : tuple */[
-                              255,
-                              165,
-                              0
-                            ],
-                            /* hsl : tuple */[
-                              39,
-                              100,
-                              50
-                            ],
-                            /* hsv : tuple */[
-                              39,
-                              100,
-                              100
-                            ],
-                            /* cmyk : tuple */[
-                              0,
-                              35,
-                              100,
-                              0
-                            ],
-                            /* keyword */"orange",
-                            /* hex */"#ffa500",
-                            /* rgba : tuple */[
-                              255,
-                              165,
-                              0,
-                              1.0
-                            ],
-                            /* hsla : tuple */[
-                              39,
-                              100,
-                              50,
-                              1.0
-                            ],
-                            /* hsva : tuple */[
-                              39,
-                              100,
-                              100,
-                              1.0
-                            ],
-                            /* cmyka : tuple */[
-                              0,
-                              35,
-                              100,
-                              0,
-                              1.0
-                            ]
-                          ], Jest.Expect[/* expect */0](t));
+                var res = /* record */[
+                  /* rgb : tuple */[
+                    255,
+                    165,
+                    0
+                  ],
+                  /* hsl : tuple */[
+                    39,
+                    100,
+                    50
+                  ],
+                  /* hsv : tuple */[
+                    39,
+                    100,
+                    100
+                  ],
+                  /* cmyk : tuple */[
+                    0,
+                    35,
+                    100,
+                    0
+                  ],
+                  /* keyword */"orange",
+                  /* hex */"#ffa500",
+                  /* rgba : tuple */[
+                    255,
+                    165,
+                    0,
+                    1.0
+                  ],
+                  /* hsla : tuple */[
+                    39,
+                    100,
+                    50,
+                    1.0
+                  ],
+                  /* hsva : tuple */[
+                    39,
+                    100,
+                    100,
+                    1.0
+                  ],
+                  /* cmyka : tuple */[
+                    0,
+                    35,
+                    100,
+                    0,
+                    1.0
+                  ]
+                ];
+                console.log(res);
+                return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
               }));
         Jest.test("Hex #333", (function () {
                 var t = ParseColor.parse("#333");

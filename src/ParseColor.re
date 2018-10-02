@@ -48,9 +48,15 @@ let defaultColor: color = {
   cmyka: (0, 0, 0, 0, 0.),
 };
 
+/* require our parse-color module and bind to it as a useable variable */
+[@bs.module] external parseColor : string => color = "parse-color";
+
 type parse = string => color;
 
-let parse = _str => {
-  let c = defaultColor;
-  c;
+let parse = v => {
+  let parsed = parseColor(v);
+  Js.log(parsed);
+  Js.log(parsed.rgb);
+  Js.log(parsed.rgba);
+  parsed;
 };

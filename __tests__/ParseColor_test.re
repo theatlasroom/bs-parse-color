@@ -11,9 +11,9 @@ describe("Smoke", () =>
 );
 
 describe("parse", () => {
-  test("Hex #ffa500", () => {
+  Only.test("Hex #ffa500", () => {
     let t = "#ffa500" |> parse;
-    let res = {
+    let res: color = {
       rgb: (255, 165, 0),
       hsl: (39, 100, 50),
       hsv: (39, 100, 100),
@@ -25,11 +25,12 @@ describe("parse", () => {
       hsva: (39, 100, 100, 1.0),
       cmyka: (0, 35, 100, 0, 1.0),
     };
+    Js.log(res);
     expect(t) |> toEqual(res);
   });
   test("Hex #333", () => {
     let t = "#333" |> parse;
-    let res = {
+    let res: color = {
       rgb: (51, 51, 51),
       hsl: (0, 0, 20),
       hsv: (0, 0, 20),
@@ -45,7 +46,7 @@ describe("parse", () => {
   });
   test("Hex #f98", () => {
     let t = "#f98" |> parse;
-    let res = {
+    let res: color = {
       rgb: (255, 153, 136),
       hsl: (9, 100, 77),
       hsv: (9, 47, 100),
@@ -61,7 +62,7 @@ describe("parse", () => {
   });
   test("String 'lime'", () => {
     let t = "lime" |> parse;
-    let res = {
+    let res: color = {
       rgb: (0, 255, 0),
       hsl: (120, 100, 50),
       hsv: (120, 100, 100),
@@ -77,7 +78,7 @@ describe("parse", () => {
   });
   test("String hsl(210,50,50)", () => {
     let t = "hsl(210,50,50)" |> parse;
-    let res = {
+    let res: color = {
       rgb: (64, 127, 191),
       hsl: (210, 50, 50),
       hsv: (210, 67, 75),
@@ -93,7 +94,7 @@ describe("parse", () => {
   });
   test("String rgba(153,50,204,60%)", () => {
     let t = "rgba(153,50,204,60%)" |> parse;
-    let res = {
+    let res: color = {
       rgb: (153, 50, 204),
       hsl: (280, 61, 50),
       hsv: (280, 75, 80),
