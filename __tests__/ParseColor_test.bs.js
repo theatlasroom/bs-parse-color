@@ -89,7 +89,7 @@ describe("parse", (function () {
                     0,
                     80
                   ],
-                  keyword: undefined,
+                  keyword: "",
                   hex: "#333333",
                   rgba: /* tuple */[
                     51,
@@ -143,7 +143,7 @@ describe("parse", (function () {
                     47,
                     0
                   ],
-                  keyword: undefined,
+                  keyword: "",
                   hex: "#ff9988",
                   rgba: /* tuple */[
                     255,
@@ -251,7 +251,7 @@ describe("parse", (function () {
                     0,
                     25
                   ],
-                  keyword: undefined,
+                  keyword: "",
                   hex: "#407fbf",
                   rgba: /* tuple */[
                     64,
@@ -334,6 +334,91 @@ describe("parse", (function () {
                         ]
                       };
                       return Jest.Expect[/* toEqual */12](res, Jest.Expect[/* expect */0](t));
+                    }));
+      }));
+
+describe("extract", (function () {
+        Jest.test("Hex #ffa500", (function () {
+                var t = ParseColor.asHex(ParseColor.parse("#ffa500"));
+                return Jest.Expect[/* toEqual */12]("#ffa500", Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Name #9932cc", (function () {
+                var t = ParseColor.asKeyword(ParseColor.parse("#9932cc"));
+                return Jest.Expect[/* toEqual */12]("darkorchid", Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Name #407fbf", (function () {
+                var t = ParseColor.asKeyword(ParseColor.parse("#407fbf"));
+                return Jest.Expect[/* toEqual */12]("", Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Rgb #f98", (function () {
+                var t = ParseColor.asRgb(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            255,
+                            153,
+                            136
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Rgba #f98", (function () {
+                var t = ParseColor.asRgba(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            255,
+                            153,
+                            136,
+                            1
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Hsv #f98", (function () {
+                var t = ParseColor.asHsv(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            9,
+                            47,
+                            100
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Hsva #f98", (function () {
+                var t = ParseColor.asHsva(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            9,
+                            47,
+                            100,
+                            1
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Hsl #f98", (function () {
+                var t = ParseColor.asHsl(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            9,
+                            100,
+                            77
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Hsla #f98", (function () {
+                var t = ParseColor.asHsla(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            9,
+                            100,
+                            77,
+                            1
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        Jest.test("Cmyk #f98", (function () {
+                var t = ParseColor.asCmyk(ParseColor.parse("#f98"));
+                return Jest.Expect[/* toEqual */12](/* tuple */[
+                            0,
+                            40,
+                            47,
+                            0
+                          ], Jest.Expect[/* expect */0](t));
+              }));
+        return Jest.test("Cmyka #f98", (function () {
+                      var t = ParseColor.asCmyka(ParseColor.parse("#f98"));
+                      return Jest.Expect[/* toEqual */12](/* tuple */[
+                                  0,
+                                  40,
+                                  47,
+                                  0,
+                                  1
+                                ], Jest.Expect[/* expect */0](t));
                     }));
       }));
 

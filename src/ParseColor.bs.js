@@ -4,8 +4,74 @@
 var ParseColor = require("parse-color");
 
 function parse(v) {
-  return ParseColor(v);
+  var p = ParseColor(v);
+  var match = p.hex;
+  var hex = match !== undefined ? match : "";
+  var match$1 = p.keyword;
+  var keyword = match$1 !== undefined ? match$1 : "";
+  return {
+          rgb: p.rgb,
+          rgba: p.rgba,
+          hsv: p.hsv,
+          hsva: p.hsva,
+          hsl: p.hsl,
+          hsla: p.hsla,
+          cmyk: p.cmyk,
+          cmyka: p.cmyka,
+          hex: hex,
+          keyword: keyword
+        };
+}
+
+function asHex(v) {
+  return v.hex;
+}
+
+function asKeyword(v) {
+  return v.keyword;
+}
+
+function asRgb(v) {
+  return v.rgb;
+}
+
+function asRgba(v) {
+  return v.rgba;
+}
+
+function asHsv(v) {
+  return v.hsv;
+}
+
+function asHsva(v) {
+  return v.hsva;
+}
+
+function asHsl(v) {
+  return v.hsl;
+}
+
+function asHsla(v) {
+  return v.hsla;
+}
+
+function asCmyk(v) {
+  return v.cmyk;
+}
+
+function asCmyka(v) {
+  return v.cmyka;
 }
 
 exports.parse = parse;
+exports.asHex = asHex;
+exports.asKeyword = asKeyword;
+exports.asRgb = asRgb;
+exports.asRgba = asRgba;
+exports.asHsv = asHsv;
+exports.asHsva = asHsva;
+exports.asHsl = asHsl;
+exports.asHsla = asHsla;
+exports.asCmyk = asCmyk;
+exports.asCmyka = asCmyka;
 /* parse-color Not a pure module */
