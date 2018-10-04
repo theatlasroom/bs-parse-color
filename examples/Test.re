@@ -2,13 +2,13 @@ let c = ParseColor.parse("orange");
 
 Js.log(c);
 
-Js.log(c##rgb);
+Js.log(c.rgb);
 
-Js.log(c##rgba);
+Js.log(c.rgba);
 
-Js.log(c##hex);
+Js.log(c.hex);
 
-Js.log(c##keyword);
+Js.log(c.keyword);
 
 /* Lol, but why? */
 Js.log(c |> ParseColor.asHex |> ParseColor.parse |> ParseColor.asKeyword);

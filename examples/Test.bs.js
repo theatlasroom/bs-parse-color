@@ -7,13 +7,13 @@ var c = ParseColor.parse("orange");
 
 console.log(c);
 
-console.log(c.rgb);
+console.log(c[/* rgb */2]);
 
-console.log(c.rgba);
+console.log(c[/* rgba */6]);
 
-console.log(c.hex);
+console.log(c[/* hex */1]);
 
-console.log(c.keyword);
+console.log(c[/* keyword */0]);
 
 console.log(ParseColor.asKeyword(ParseColor.parse(ParseColor.asHex(c))));
 

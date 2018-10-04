@@ -9,58 +9,58 @@ function parse(v) {
   var hex = match !== undefined ? match : "";
   var match$1 = p.keyword;
   var keyword = match$1 !== undefined ? match$1 : "";
-  return {
-          rgb: p.rgb,
-          rgba: p.rgba,
-          hsv: p.hsv,
-          hsva: p.hsva,
-          hsl: p.hsl,
-          hsla: p.hsla,
-          cmyk: p.cmyk,
-          cmyka: p.cmyka,
-          hex: hex,
-          keyword: keyword
-        };
+  return /* record */[
+          /* keyword */keyword,
+          /* hex */hex,
+          /* rgb */p.rgb,
+          /* hsv */p.hsv,
+          /* hsl */p.hsl,
+          /* cmyk */p.cmyk,
+          /* rgba */p.rgba,
+          /* hsla */p.hsla,
+          /* hsva */p.hsva,
+          /* cmyka */p.cmyka
+        ];
 }
 
 function asHex(v) {
-  return v.hex;
+  return v[/* hex */1];
 }
 
 function asKeyword(v) {
-  return v.keyword;
+  return v[/* keyword */0];
 }
 
 function asRgb(v) {
-  return v.rgb;
+  return v[/* rgb */2];
 }
 
 function asRgba(v) {
-  return v.rgba;
+  return v[/* rgba */6];
 }
 
 function asHsv(v) {
-  return v.hsv;
+  return v[/* hsv */3];
 }
 
 function asHsva(v) {
-  return v.hsva;
+  return v[/* hsva */8];
 }
 
 function asHsl(v) {
-  return v.hsl;
+  return v[/* hsl */4];
 }
 
 function asHsla(v) {
-  return v.hsla;
+  return v[/* hsla */7];
 }
 
 function asCmyk(v) {
-  return v.cmyk;
+  return v[/* cmyk */5];
 }
 
 function asCmyka(v) {
-  return v.cmyka;
+  return v[/* cmyka */9];
 }
 
 exports.parse = parse;

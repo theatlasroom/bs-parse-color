@@ -8,7 +8,7 @@ type list5f = (int, int, int, int, float);
 
 type maybeString = option(string);
 
-type color = {
+type colorObject = {
   .
   "rgb": list3,
   "hsl": list3,
@@ -22,7 +22,7 @@ type color = {
   "cmyka": list5f,
 };
 
-type colorModelOption =
+type colorOption =
   | RGB(list3)
   | RGBA(list4f)
   | HSL(list3)
@@ -35,7 +35,20 @@ type colorModelOption =
   | KEYWORD(string);
 
 /* require our parse-color module and bind to it as a useable variable */
-[@bs.module] external parseColor : string => color = "parse-color";
+[@bs.module] external parseColor : string => colorObject = "parse-color";
+
+type color = {
+  keyword: string,
+  hex: string,
+  rgb: list3,
+  hsv: list3,
+  hsl: list3,
+  cmyk: list4,
+  rgba: list4f,
+  hsla: list4f,
+  hsva: list4f,
+  cmyka: list5f,
+};
 
 type parse = string => color;
 
@@ -51,59 +64,56 @@ let parse = v => {
     | Some(s) => s
     | None => ""
     };
-  /* let {rgb, rgba, hsv, hsva, hsl, hsla, cmyk, cmyka} = p; */
-  let parsed = {
-    "rgb": p##rgb,
-    "rgba": p##rgba,
-    "hsv": p##hsv,
-    "hsva": p##hsva,
-    "hsl": p##hsl,
-    "hsla": p##hsla,
-    "cmyk": p##cmyk,
-    "cmyka": p##cmyka,
-    "hex": hex,
-    "keyword": keyword,
+  {
+    rgb: p##rgb,
+    rgba: p##rgba,
+    hsv: p##hsv,
+    hsva: p##hsva,
+    hsl: p##hsl,
+    hsla: p##hsla,
+    cmyk: p##cmyk,
+    cmyka: p##cmyka,
+    hex,
+    keyword,
   };
-  parsed;
 };
 
-/* type extract = (color, colorModelOption) => option(a); */
 type asHex = color => option(string);
 
-let asHex = v => v##hex;
+let asHex = v => v.hex;
 
 type asKeyword = color => option(string);
 
-let asKeyword = v => v##keyword;
+let asKeyword = v => v.keyword;
 
 type asRgb = color => option(list3);
 
-let asRgb = v => v##rgb;
+let asRgb = v => v.rgb;
 
 type asRgba = color => option(list4f);
 
-let asRgba = v => v##rgba;
+let asRgba = v => v.rgba;
 
 type asHsv = color => option(list3);
 
-let asHsv = v => v##hsv;
+let asHsv = v => v.hsv;
 
 type asHsva = color => option(list4f);
 
-let asHsva = v => v##hsva;
+let asHsva = v => v.hsva;
 
 type asHsl = color => option(list3);
 
-let asHsl = v => v##hsl;
+let asHsl = v => v.hsl;
 
 type asHsla = color => option(list4f);
 
-let asHsla = v => v##hsla;
+let asHsla = v => v.hsla;
 
 type asCmyk = color => option(list4);
 
-let asCmyk = v => v##cmyk;
+let asCmyk = v => v.cmyk;
 
 type asCmyka = color => option(list5f);
 
-let asCmyka = v => v##cmyka;
+let asCmyka = v => v.cmyka;
