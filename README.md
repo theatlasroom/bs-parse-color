@@ -6,6 +6,26 @@ Pretty naive BuckleScript bindings for [parse-color](https://github.com/substack
 
 I'm very new to Reason, so i do not recommend using this for anything more than a toy, please open an issue / leave comments if you have a better ideas on some of the parts.
 
+## Installation
+With yarn
+```
+yarn add bs-parse-color
+```
+
+Or with npm
+```
+npm install bs-parse-color
+```
+
+Then add `bs-parse-color` to your `bsconfig.json` file as a dependency
+```
+{
+  ...
+  "bs-dependencies": [ "bs-parse-color" ]
+  ...
+}
+```
+
 ## Usage
 ```
 /* call .parse with an argument of any color type */
@@ -16,9 +36,7 @@ let parsed = ParseColor.parse(col);
 parsed |> asHex;
 parsed |> asRgba;
 parsed |> asCmkya;
-```
 
-<!-- ## Installation
+/* access a color mode */
+parsed.rgba
 ```
-npm install bs-parse-color
-``` -->

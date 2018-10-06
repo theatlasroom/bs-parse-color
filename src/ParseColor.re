@@ -22,7 +22,7 @@ type colorObject = {
   "cmyka": list5f,
 };
 
-type colorOption =
+type colorMode =
   | RGB(list3)
   | RGBA(list4f)
   | HSL(list3)
@@ -35,7 +35,7 @@ type colorOption =
   | KEYWORD(string);
 
 /* require our parse-color module and bind to it as a useable variable */
-[@bs.module] external parseColor : string => colorObject = "parse-color";
+[@bs.module] external parseColor: string => colorObject = "parse-color";
 
 type color = {
   keyword: string,
