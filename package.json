@@ -1,6 +1,6 @@
 {
   "name": "bs-parse-color",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "BuckleScript bindings for the parse-color js library",
   "main": "src/ParseColor.bs.js",
   "scripts": {
@@ -32,11 +32,11 @@
   "author": "theatlasroom",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.5",
+    "bs-platform": "^4.0.18",
     "bsb-js": "^1.1.7"
   },
   "dependencies": {
-    "bs-jest": "^0.3.2",
+    "@glennsl/bs-jest": "^0.4.7",
     "parse-color": "^1.0.0"
   }
 }
