@@ -10,7 +10,7 @@
     "test": "npm run build && jest",
     "test:watch": "npm run build && jest --watch",
     "build:ci": "bsb -clean-world && bsb -make-world",
-    "test:ci": "jest --testURL http://localhost/"
+    "test:ci": "jest"
   },
   "repository": {
     "type": "git",
