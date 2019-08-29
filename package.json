@@ -36,7 +36,7 @@
     "bsb-js": "^1.1.7"
   },
   "dependencies": {
-    "@glennsl/bs-jest": "^0.4.7",
+    "@glennsl/bs-jest": "^0.4.9",
     "parse-color": "^1.0.0"
   }
 }
