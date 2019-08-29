@@ -2,16 +2,16 @@ version: 2
 jobs:
   build:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:8.0.0 # the primary container, where your job's commands are run
+      - image: circleci/node:12.0.0 # the primary container, where your job's commands are run
     working_directory: ~/repo
     steps:
       - checkout # check out the code in the project directory
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run:
           name: Install dependencies
           command: |
