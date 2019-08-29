@@ -4,13 +4,13 @@
 var Jest = require("@glennsl/bs-jest/src/jest.js");
 var ParseColor = require("../src/ParseColor.bs.js");
 
-describe("Free smoke free smokkkkeee", (function () {
+Jest.describe("Free smoke free smokkkkeee", (function (param) {
         return Jest.test("1 + 2 = 3", (function (param) {
                       return Jest.Expect[/* toBe */2](3, Jest.Expect[/* expect */0](3));
                     }));
       }));
 
-describe("parse", (function () {
+Jest.describe("parse", (function (param) {
         Jest.test("Hex #ffa500", (function (param) {
                 var t = ParseColor.parse("#ffa500");
                 return Jest.Expect[/* toEqual */12](/* record */[
@@ -331,7 +331,7 @@ describe("parse", (function () {
                     }));
       }));
 
-describe("extract", (function () {
+Jest.describe("extract", (function (param) {
         Jest.test("Hex #ffa500", (function (param) {
                 var t = ParseColor.asHex(ParseColor.parse("#ffa500"));
                 return Jest.Expect[/* toEqual */12]("#ffa500", Jest.Expect[/* expect */0](t));
